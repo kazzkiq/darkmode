@@ -1,11 +1,11 @@
 const updateCallbacks = [];
 
 function setLocalDarkMode(value: boolean) {
-  localStorage.setItem('escuro-dark', value.toString());
+  localStorage.setItem('darkmode-dark', value.toString());
 }
 
 function getLocalDarkMode(): boolean {
-  const localValue = localStorage.getItem('escuro-dark');
+  const localValue = localStorage.getItem('darkmode-dark');
   
   if (!localValue) {
     return null;
