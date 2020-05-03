@@ -1,10 +1,10 @@
 [![Build Status](https://travis-ci.com/kazzkiq/pale.svg?branch=master)](https://travis-ci.com/kazzkiq/pale)
 
 <p align="center">
-  <h1>Escuro</h1>
+  <b>Escuro</b>
   <br>
   A micro library (~350B) for handling dark mode on browsers.
-  <br>
+  <br><br>
   <a href="https://travis-ci.com/kazzkiq/pale"><img src="https://travis-ci.com/kazzkiq/pale.svg?branch=master" alt="Build Status"></a>
 </p>
 
