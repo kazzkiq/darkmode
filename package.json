@@ -6,6 +6,7 @@
   "module": "dist/escuro.modern.module.js",
   "types": "dist/escuro.d.ts",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "microbundle src/index.ts -f es,umd"
   },
   "repository": {
