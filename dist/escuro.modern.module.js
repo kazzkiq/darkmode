@@ -1,0 +1,2 @@
+var e="escuro-dark";function r(){return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches}function t(){return"true"===localStorage.getItem(e)||r()}function n(r){localStorage.setItem(e,r.toString())}function a(e){window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e.call(null,r()))}function c(e){window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change",e.call(null,r()))}export{r as isBrowserDark,t as isDark,n as setDark,a as onUpdate,c as onDestroy};
+//# sourceMappingURL=escuro.modern.module.js.map

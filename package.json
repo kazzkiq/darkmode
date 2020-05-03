@@ -1,0 +1,29 @@
+{
+  "name": "escuro",
+  "version": "0.1.0",
+  "description": "A tiny library for handling dark mode on browsers.",
+  "main": "dist/escuro.umd.js",
+  "module": "dist/escuro.modern.module.js",
+  "types": "dist/escuro.d.ts",
+  "scripts": {
+    "build": "microbundle src/index.ts -f es,umd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazzkiq/escuro.git"
+  },
+  "keywords": [
+    "dark",
+    "mode",
+    "darkmode"
+  ],
+  "author": "Claudio Holanda Jr.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kazzkiq/escuro/issues"
+  },
+  "homepage": "https://github.com/kazzkiq/escuro#readme",
+  "devDependencies": {
+    "microbundle": "^0.11.0"
+  }
+}
