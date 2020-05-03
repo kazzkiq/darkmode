@@ -1,7 +1,7 @@
 <p align="center">
   <img src="logo.png" width="100" height="100">
   <br>
-  <b>Escuro</b>
+  <b role="heading" aria-level="1">Escuro</b>
   <br>
   A micro library (~350B) for handling dark mode on browsers.
   <br><br>
