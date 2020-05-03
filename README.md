@@ -3,7 +3,7 @@
   <br>
   <b role="heading" aria-level="1">DarkMode</b>
   <br>
-  A micro library (~350B) for handling dark mode on browsers.
+  A micro library (~360B) for handling dark mode on browsers.
   <br><br>
   <a href="https://travis-ci.com/kazzkiq/darkmode"><img src="https://travis-ci.com/kazzkiq/darkmode.svg?token=8NxvMyxN8sgafdHfeb8d&branch=master" alt="Build Status"></a>
 </p>
