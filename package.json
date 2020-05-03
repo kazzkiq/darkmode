@@ -1,6 +1,6 @@
 {
   "name": "escuro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tiny library for handling dark mode on browsers.",
   "main": "dist/escuro.umd.js",
   "module": "dist/escuro.modern.module.js",

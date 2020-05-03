@@ -21,10 +21,10 @@ export function setDark(isDark: boolean) {
 
 export function onUpdate(cb: (isDark: boolean) => void) {
   window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change',cb.call(null, isBrowserDark()));
+    .addEventListener('change', () => cb(isBrowserDark()));
 }
 
 export function onDestroy(cb: () => void) {
   window.matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', cb.call(null, isBrowserDark()));
+    .removeEventListener('change', () => cb());
 }
