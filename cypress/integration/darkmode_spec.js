@@ -1,37 +1,37 @@
-describe('Darkmode: true', () => {
+describe('Testing Escuro in a browser with dark mode enabled', () => {
   it('Open test page', () => {
     cy.visit('http://localhost:5001/index.html');
   });
 
-  it('Confirm escuro is in window', () => {
+  it('Confirms Escuro is loaded into window object', () => {
     cy.window()
     .then((win) => {
       expect(!!win.escuro).to.be.true;
     });
   });
 
-  it('isDarkLocal(): confirm is dark-mode', () => {
+  it('isDarkLocal(): confirms user preference is dark-mode', () => {
     cy.window()
     .then((win) => {
       expect(win.escuro.isDarkLocal()).to.be.true;
     });
   });
 
-  it('isDark(): confirm is dark-mode', () => {
+  it('isDark(): confirms is dark-mode', () => {
     cy.window()
     .then((win) => {
       expect(win.escuro.isDark()).to.be.true;
     });
   });
 
-  it('body.dark: confirm body received programmatic CSS class', () => {
+  it('body.dark: confirms <body> received programmatic CSS class .dark', () => {
     cy.window()
     .then((win) => {
       expect(win.document.body.classList.contains('dark')).to.be.true;
     });
   });
 
-  it('setDark(): set NOT dark-mode and check it', () => {
+  it('setDark(): programatically set user prefs to "false" and checks it', () => {
     cy.window()
     .then((win) => {
       win.escuro.setDark(false);
@@ -40,7 +40,7 @@ describe('Darkmode: true', () => {
     });
   });
 
-  it('onUpdate(): check update triggered', () => {
+  it('onUpdate(): checks if update triggered', () => {
     cy.window()
     .then((win) => {
       win.escuro.onUpdate((isDark) => win.isDark = isDark);
@@ -53,7 +53,7 @@ describe('Darkmode: true', () => {
     });
   });
 
-  it('onUpdate(): check body .dark CSS class toggle', () => {
+  it('onUpdate(): checks if <body> .dark CSS class toggled', () => {
     cy.window()
     .then((win) => {
       win.escuro.setDark(true);
