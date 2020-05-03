@@ -1,11 +1,9 @@
-const DARKMODE_KEY = 'escuro-dark';
-
 function setLocalDarkMode(value: boolean) {
-  localStorage.setItem(DARKMODE_KEY, value.toString());
+  localStorage.setItem('escuro-dark', value.toString());
 }
 
 function getLocalDarkMode(): boolean {
-  return localStorage.getItem(DARKMODE_KEY) === 'true';
+  return localStorage.getItem('escuro-dark') === 'true';
 }
 
 export function isBrowserDark(): boolean {
