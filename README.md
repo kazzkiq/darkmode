@@ -5,7 +5,7 @@
   <br>
   A micro library (~350B) for handling dark mode on browsers.
   <br><br>
-  <a href="https://travis-ci.com/kazzkiq/escuro"><img src="https://travis-ci.com/kazzkiq/escuro.svg?branch=master" alt="Build Status"></a>
+  <a href="https://travis-ci.com/kazzkiq/escuro"><img src="https://travis-ci.com/kazzkiq/escuro.svg?token=8NxvMyxN8sgafdHfeb8d&branch=master" alt="Build Status"></a>
 </p>
 
 ## Instalation
