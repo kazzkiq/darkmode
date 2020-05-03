@@ -8,9 +8,10 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "microbundle src/index.ts -f es,umd",
+    "pretest": "npm run build",
     "test": "kill-port 5001 && npm run test:server & npm run test:run",
     "test:server": "http-server dist -s -p 5001",
-    "test:run": "cypress run"
+    "test:run": "cypress run --browser chrome --headless"
   },
   "repository": {
     "type": "git",

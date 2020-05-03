@@ -18,14 +18,14 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  on('before:browser:launch', (browser = {}, args) => {
-    console.log('browser', browser)
+  on('before:browser:launch', (browser, launchOptions) => {
+    console.log('browser', browser);
 
-    if (browser.family === 'chrome') {
-      console.log('adding dark mode browser flags')
-      args.push('--force-dark-mode=true')
-
-      return args
+    if (browser.family === 'chromium') {
+      console.log('');
+      console.log('Custom config: Adding dark mode browser flags');
+      launchOptions.args.push('--force-dark-mode=true');
+      return launchOptions;
     }
-  })
+  });
 }
