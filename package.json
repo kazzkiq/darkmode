@@ -1,13 +1,13 @@
 {
-  "name": "darkmode",
-  "version": "0.1.1",
+  "name": "@kazzkiq/darkmode",
+  "version": "0.1.0",
   "description": "A tiny library for handling dark mode on browsers.",
   "main": "dist/darkmode.umd.js",
   "module": "dist/darkmode.modern.module.js",
   "types": "dist/darkmode.d.ts",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "microbundle src/index.ts -f es,umd",
+    "build": "microbundle src/index.ts -f es,umd --name DarkMode --no-sourcemap",
     "pretest": "npm run build",
     "test": "kill-port 5001 && npm run test:server & npm run test:run",
     "test:server": "http-server dist -s -p 5001",

@@ -1,2 +1,0 @@
-var e=[];function r(){return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches}function t(){var e,t=(e=localStorage.getItem("darkmode-dark"))?"true"===e:null;return null===t?r():t}function n(r){localStorage.setItem("darkmode-dark",r.toString()),e.forEach(function(e){return e(r)})}function o(t){e.push(t),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){return t(r())})}export{r as isDark,t as isDarkLocal,n as setDark,o as onUpdate};
-//# sourceMappingURL=darkmode.modern.module.js.map

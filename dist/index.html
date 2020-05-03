@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Testing DarkMode - DarkMode</title>
+  <title>Testing DarkMode</title>
   <style>
     body {
       display: flex;
@@ -32,14 +32,14 @@
     const status = document.getElementById('dark-status');
     const browserStatus = document.getElementById('browser-dark-status');
 
-    status.innerHTML = `${darkmode.isDarkLocal()}`;
-    browserStatus.innerHTML = `${darkmode.isDark()}`;
+    status.innerHTML = `${DarkMode.isDarkLocal()}`;
+    browserStatus.innerHTML = `${DarkMode.isDark()}`;
 
-    if (darkmode.isDarkLocal()) {
+    if (DarkMode.isDarkLocal()) {
       document.body.classList.add('dark');
     }
     
-    darkmode.onUpdate((isDark) => isDark ? document.body.classList.add('dark') : document.body.classList.remove('dark'));
+    DarkMode.onUpdate((isDark) => isDark ? document.body.classList.add('dark') : document.body.classList.remove('dark'));
   </script>
 </body>
 </html>
