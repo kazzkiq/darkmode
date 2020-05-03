@@ -26,7 +26,7 @@ https://unpkg.com/@kazzkiq/darkmode/dist/darkmode.umd.js
 
 ## Usage
 
-```
+```js
 import { isDark, onUpdate } from '@kazzkiq/darkmode';
 
 const isDarkMode = isDark();
@@ -40,7 +40,7 @@ onUpdate((isDark) => {
 
 To detect if the browser is in dark mode, simply run `isDark()`.
 
-```
+```js
 import { isDark } from '@kazzkiq/darkmode';
 
 const isDarkMode = isDark(); // true|false
@@ -50,7 +50,7 @@ const isDarkMode = isDark(); // true|false
 
 To detect os the browser toggled dark mode, you can rely on `onUpdate()`.
 
-```
+```js
 import { onUpdate } from '@kazzkiq/darkmode';
 
 onUpdate((isDark) => {
@@ -62,7 +62,7 @@ onUpdate((isDark) => {
 
 Sometimes you will want to let your user decide to enforce dark mode, even when their OS doesn't supports it. In these cases you can programatically set dark mode locally, and by making use of `localStorage` DarkMode can then behave accordingly.
 
-```
+```js
 import { setDark, isDark, isDarkLocal } from '@kazzkiq/darkmode';
 
 setDark(true); // now this user is in DarkMode
@@ -77,7 +77,7 @@ isDarkLocal() // reads localStorage value, thus returns true
 
 `isDark()` will always returns if browser/OS dark mode is on. For cases where you enforce dark mode using `setDark()`, you can then use `isDarkLocal()` to check if the user preference is for dark mode even with browser/OS not being in this mode.
 
-```
+```js
 import { isDarkLocal } from '@kazzkiq/darkmode';
 
 const isDarkMode = isDarkLocal(); // true|false based on localStorage, not on browser/OS configs.
@@ -94,7 +94,7 @@ Even in browsers that doesn't supports it, you can still "simulate" it by using 
 
 In case of any of DarkMode functions conflict with current functions in your project, you can import them under `DarkMode` object to prevent conflicts:
 
-```
+```js
 import * as DarkMode from '@kazzkiq/darkmode';
 
 DarkMode.isDark();
