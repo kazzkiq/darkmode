@@ -13,11 +13,92 @@
 You can install DarkMode via **npm**:
 
 ```
-npm install --save darkmode
+npm install --save @kazzkiq/darkmode
 ```
 
 Or use it directly in browser via CDN service:
 
 ```
-https://unpkg.com/darkmode/dist/darkmode.umd.js
+https://unpkg.com/@kazzkiq/darkmode/dist/darkmode.umd.js
+```
+
+<small>When using directly in browser, all functions will be available user `DarkMode` object.</small>
+
+## Usage
+
+```
+import { isDark, onUpdate } from '@kazzkiq/darkmode';
+
+const isDarkMode = isDark();
+
+onUpdate((isDark) => {
+  // isDark can be true or false
+});
+```
+
+### isDark()
+
+To detect if the browser is in dark mode, simply run `isDark()`.
+
+```
+import { isDark } from '@kazzkiq/darkmode';
+
+const isDarkMode = isDark(); // true|false
+```
+
+### onUpdate()
+
+To detect os the browser toggled dark mode, you can rely on `onUpdate()`.
+
+```
+import { onUpdate } from '@kazzkiq/darkmode';
+
+onUpdate((isDark) => {
+  // isDark returns true|false
+});
+```
+
+### setDark()
+
+Sometimes you will want to let your user decide to enforce dark mode, even when their OS doesn't supports it. In these cases you can programatically set dark mode locally, and by making use of `localStorage` DarkMode can then behave accordingly.
+
+```
+import { setDark, isDark, isDarkLocal } from '@kazzkiq/darkmode';
+
+setDark(true); // now this user is in DarkMode
+
+isDark() // reads browser/OS dark mode, thus returns false
+isDarkLocal() // reads localStorage value, thus returns true
+```
+
+`setDark()` also triggers `onUpdate()` automatically.
+
+### isDarkLocal()
+
+`isDark()` will always returns if browser/OS dark mode is on. For cases where you enforce dark mode using `setDark()`, you can then use `isDarkLocal()` to check if the user preference is for dark mode even with browser/OS not being in this mode.
+
+```
+import { isDarkLocal } from '@kazzkiq/darkmode';
+
+const isDarkMode = isDarkLocal(); // true|false based on localStorage, not on browser/OS configs.
+```
+
+### Browsers which doesn't support it
+
+For any browser that doesn't supports dark mode, the `isDark()` function will always return  `false`.
+
+Even in browsers that doesn't supports it, you can still "simulate" it by using `setDark()` and `isDarkLocal()`.
+
+
+### Function conflicts
+
+In case of any of DarkMode functions conflict with current functions in your project, you can import them under `DarkMode` object to prevent conflicts:
+
+```
+import * as DarkMode from '@kazzkiq/darkmode';
+
+DarkMode.isDark();
+DarkMode.onUpdate();
+DarkMode.setDark();
+// ...
 ```
