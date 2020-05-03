@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing DarkMode - Escuro</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+    }
+
+    body.dark {
+      background-color: #222;
+    }
+
+    body.dark h1 {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Is dark mode: <span id="dark-status">???</span></h1>
+  <h1>Is browser dark mode: <span id="browser-dark-status">???</span></h1>
+  <script src="./escuro.umd.js"></script>
+
+  <script>
+    const status = document.getElementById('dark-status');
+    const browserStatus = document.getElementById('browser-dark-status');
+
+    status.innerHTML = `${escuro.isDarkLocal()}`;
+    browserStatus.innerHTML = `${escuro.isDark()}`;
+
+    if (escuro.isDarkLocal()) {
+      document.body.classList.add('dark');
+    }
+    
+    escuro.onUpdate((isDark) => isDark ? document.body.classList.add('dark') : document.body.classList.remove('dark'));
+  </script>
+</body>
+</html>

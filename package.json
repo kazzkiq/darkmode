@@ -7,7 +7,10 @@
   "types": "dist/escuro.d.ts",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "microbundle src/index.ts -f es,umd"
+    "build": "microbundle src/index.ts -f es,umd",
+    "test": "kill-port 5001 && npm run test:server & npm run test:run",
+    "test:server": "http-server dist -s -p 5001",
+    "test:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,9 @@
   },
   "homepage": "https://github.com/kazzkiq/escuro#readme",
   "devDependencies": {
+    "cypress": "^4.5.0",
+    "http-server": "^0.12.3",
+    "kill-port": "^1.6.0",
     "microbundle": "^0.11.0"
   }
 }

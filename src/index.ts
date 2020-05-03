@@ -1,30 +1,43 @@
+const updateCallbacks = [];
+
 function setLocalDarkMode(value: boolean) {
   localStorage.setItem('escuro-dark', value.toString());
 }
 
 function getLocalDarkMode(): boolean {
-  return localStorage.getItem('escuro-dark') === 'true';
+  const localValue = localStorage.getItem('escuro-dark');
+  
+  if (!localValue) {
+    return null;
+  }
+  
+  return localValue === 'true';
 }
 
-export function isBrowserDark(): boolean {
+export function isDark(): boolean {
   return window.matchMedia
     && window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
-export function isDark(): boolean {
-  return getLocalDarkMode() || isBrowserDark();
+export function isDarkLocal(): boolean {
+  const localDark = getLocalDarkMode();
+
+  if (localDark === null) {
+    return isDark();
+  }
+
+  return localDark;
 }
 
 export function setDark(isDark: boolean) {
   setLocalDarkMode(isDark);
+
+  updateCallbacks.forEach(cb => cb(isDark));
 }
 
 export function onUpdate(cb: (isDark: boolean) => void) {
-  window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', () => cb(isBrowserDark()));
-}
+  updateCallbacks.push(cb);
 
-export function onDestroy(cb: () => void) {
   window.matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', () => cb());
+    .addEventListener('change', () => cb(isDark()));
 }
