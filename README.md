@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/kazzkiq/pale.svg?branch=master)](https://travis-ci.com/kazzkiq/pale)
-
 <p align="center">
   <b>Escuro</b>
   <br>
