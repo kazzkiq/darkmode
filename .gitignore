@@ -9,3 +9,6 @@ Thumbs.db
 node_modules/
 .rts2_*/
 npm-debug.log
+
+cypress/videos
+cypress/screenshots
