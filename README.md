@@ -92,7 +92,7 @@ Even in browsers that doesn't supports it, you can still "simulate" it by using 
 
 ### Function conflicts
 
-In case of any of DarkMode functions conflict with current functions in your project, you can import them under `DarkMode` object to prevent conflicts:
+In case of any of DarkMode functions conflict with current functions in your project, you can import them under `DarkMode` namespace to prevent conflicts:
 
 ```js
 import * as DarkMode from '@kazzkiq/darkmode';
