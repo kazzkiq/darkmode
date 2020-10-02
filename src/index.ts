@@ -38,6 +38,12 @@ export function setDark(isDark: boolean) {
 export function onUpdate(cb: (isDark: boolean) => void) {
   updateCallbacks.push(cb);
 
-  window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', () => cb(isDark()));
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', () => cb(isDark()));
+  } catch (e) {
+    // Fallback for Safari < 14 and older browsers
+    window.matchMedia('(prefers-color-scheme: dark)')
+        .addListener(() => cb(isDark()));
+  }
 }
